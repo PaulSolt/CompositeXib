@@ -45,10 +45,11 @@ We need to specify the size of the self.view in the custom UIView and the Widget
 		
 			// The new self.view needs autolayout constraints for sizing
 			self.view.translatesAutoresizingMaskIntoConstraints = NO;
-				// Width
-			[self addConstraint:[NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:200]];
-				// Height
-			[self addConstraint:[NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:100]];
+				// Horizontal  200 in width
+			[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_view(200)]|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:NSDictionaryOfVariableBindings(_view, self)]];
+				// Vertical   100 in height
+			[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_view(100)]|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:NSDictionaryOfVariableBindings(_view, self)]];
+
 		}
 
  2. Create and add view to the ViewController view with autolayout constraints
@@ -65,12 +66,6 @@ We need to specify the size of the self.view in the custom UIView and the Widget
 		    
 		    // hug the bottom of the view
 		    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:widget attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
-		        
-		    // Width
-		    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:widget attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:200]];
-		    
-		    // Height
-		    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:widget attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:100]];
 		}
 
 
