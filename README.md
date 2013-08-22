@@ -1,4 +1,4 @@
-CompositeXib - Custom UIView's loaded from .xib files
+Custom UIView's loaded from .xib files
 ============
 
 Composite .xib Loading for custom UIView's created using Interface Builder. See two ways to load, either using an existing .xib file, or programmatically with code. I use autolayout, which is a little scary, but worth learning for the ease in alignment/sizing between different views.
