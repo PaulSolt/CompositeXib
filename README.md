@@ -1,9 +1,14 @@
 CompositeXib
 ============
 
-Composite .xib Loading for UI's created in Interface Builder. Use Autolayout and load programmatically.
+Composite .xib Loading for custom UIView's created using Interface Builder. See two ways to load, either using an existing .xib file, or programmatically with code. I use autolayout, which is a little scary, but worth learning for the ease in alignment/sizing between different views.
 
-### Load Custom UIView from Xcode's Interface Builder
+If you need to design custom UIView subclasses for an app, you might want to build them in Interface Builder. You'll want to use a .xib file if you need to load multiple copies of the custom UIView, or if you need to share the view between different view controllers.
+
+![Custom UIView .xib](https://raw.github.com/PaulSolt/CompositeXib/master/Custom%20UIView.png)
+![Load Multiple UIView's created from .xib files](https://raw.github.com/PaulSolt/CompositeXib/master/Load%20UIView.png)
+
+## Part 1: Load Custom UIView from Xcode's Interface Builder
  1. Create a new UIView subclass (WidgetView.h/.m)
  2. Create a new View .xib file (WidgetView.xib)
  3. Set Files Owner for .xib to WidgetView
@@ -26,7 +31,7 @@ Composite .xib Loading for UI's created in Interface Builder. Use Autolayout and
 			[self addSubview:self.view];
 		}
 
-### Load Custom UIView Programatically (autolayout)
+##Part 2: Load Custom UIView Programatically with Autolayout
 
 We need to specify the size of the self.view in the custom UIView and the Widget's view itself
 
@@ -69,5 +74,4 @@ We need to specify the size of the self.view in the custom UIView and the Widget
 		}
 
 
-![Custom UIView .xib](https://raw.github.com/PaulSolt/CompositeXib/master/Custom%20UIView.png)
-![Load Multiple UIView's created from .xib files](https://raw.github.com/PaulSolt/CompositeXib/master/Load%20UIView.png)
+
